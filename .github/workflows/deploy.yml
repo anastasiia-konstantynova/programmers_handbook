@@ -1,15 +1,15 @@
-  name: Deploy
+name: Deploy
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pull-requests: write
+      pull-requests: write 
     steps:
     - uses: actions/checkout@v4
       with:
@@ -28,7 +28,6 @@ jobs:
         git config user.name "Deploy from CI"
         git config user.email ""
         cd gh-pages
-        # Delete the ref to avoid keeping history.
         git update-ref -d refs/heads/gh-pages
         rm -rf *
         mv ../book/* .

@@ -1,3 +1,3 @@
 # The nat20 Language
 
-![Logo](../assets/logo.jpeg)
+<img src="assets/logo.jpeg" alt="Logo" width="200">
