@@ -1,7 +1,7 @@
 # Literals
 
 Literals are fixed values written directly into the source code.
-`nat20` supports several kinds of leterals including numeric, string, boolean, and the coolest `DnD-literal`
+`nat20` supports several kinds of literals including numeric, string, boolean, and the coolest `DnD-literal`
 that deserves its own chapter. 
 
 #### Numeric literals
@@ -14,7 +14,13 @@ y = 27.07 # floating-point number
 #### String literals
 
 ```nat
-%q(this is nat20 string);
+%q(this is a nat20 string);
+
+# Multi-line string example
+
+%q(this string
+   has multiple
+   lines);
 ```
 
 #### Boolean literals
@@ -27,9 +33,9 @@ y = false;
 #### DnD literals
 
 ```nat
-initiative = 1d6
+initiative = 1d6;
 ```
-DnD literals and they do will be discussed in [this](dndliterals.md) chapter
+DnD literals and what they do will be discussed in [this](dndliterals.md) chapter
 
 #### Collection literals
 

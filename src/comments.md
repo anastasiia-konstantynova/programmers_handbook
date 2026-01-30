@@ -1,6 +1,6 @@
 # Comments
 
-`nat20` supposrts single-line comments, which begin with the `#` character and continue
+`nat20` supports single-line comments, which begin with the `#` character and continue
 to the end of the line.
 
 ```nat
