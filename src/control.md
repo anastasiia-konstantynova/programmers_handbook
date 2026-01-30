@@ -32,3 +32,43 @@ esac
 
 > [!Note]
 > There is no fallthrough between when-arms.
+
+#### for-loops
+
+For-loops require a defined range for iterations as well as a step 
+which can be positive or negative:
+```nat
+for i=1, 10, 1
+  do i:printq();
+rof
+
+for i=7, 0, -1
+  do i:printq();
+rof
+
+for i=0, 5
+  do 
+  if i == 3
+    then next; # next skips 3 and jumps the next
+  fi
+  i:printq();
+rof    
+```
+
+> [!Note]
+> The step in a for-loop is optional and defaults to 1.
+
+#### loop-loops
+Loop-loop is a classic boundless loop that will iterate for 5ever
+unless you tell it stop.
+
+```nat
+counter = 0;
+loop
+  printq(%q(banana));
+  counter++;
+  if counter == 100
+    then exit;
+  fi
+pool    
+```
