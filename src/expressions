@@ -1,0 +1,19 @@
+# Expressions
+
+An expression is a syntatctic construct that evaluates to a value.
+In `nat20` expressions consist of variables, operators, function calls.
+
+#### Examples of expressions in `nat20` include:
+```nat
+x = 10;
+y = 2;
+
+x + y
+x - y
+```
+
+Expressions can also be grouped:
+```nat
+a = (27 - x) / 2;
+```
+
