@@ -2,3 +2,5 @@
 title = "Programmer's Handbook"
 authors = ["Anastasiia Konstantynova", "Elijah Hartvigsen"]
 language = "en"
+[output.html]
+sidebar-header-nav = false
