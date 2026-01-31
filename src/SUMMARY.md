@@ -14,6 +14,6 @@
 - [Examples]()
   - [Run Length Decoder](./decoder.md)
   - [Game of Life]()
-  - [Black Jack]()
+  - [Black Jack](./blackjack.md)
   - [Advent of Code Example](./advent.md)
   
