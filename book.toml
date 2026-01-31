@@ -3,4 +3,5 @@ title = "Programmer's Handbook"
 authors = ["Anastasiia Konstantynova", "Elijah Hartvigsen"]
 language = "en"
 [output.html]
+additional-css = ["theme/custom.css"]
 sidebar-header-nav = false
