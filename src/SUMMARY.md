@@ -10,9 +10,10 @@
   - [Syntax on a Postcard]()
 - [Feature Overview]()
   - [D&D Literal](./dndliterals.md)
+  - [Lambda Functions](./lambdas.md)
 - [Examples]()
   - [Run Length Decoder](./decoder.md)
   - [Game of Life]()
   - [Black Jack]()
-  - [Advent of Code Example]()
+  - [Advent of Code Example](./advent.md)
   
