@@ -11,7 +11,7 @@
 - [Feature Overview]()
   - [D&D Literal](./dndliterals.md)
 - [Examples]()
-  - [Run Length Decoder]()
+  - [Run Length Decoder](./decoder.md)
   - [Game of Life]()
   - [Black Jack]()
   - [Advent of Code Example]()
