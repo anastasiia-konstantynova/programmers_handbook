@@ -1,0 +1,316 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Advent of Code Example - Programmer&#x27;s Handbook</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/custom-c570f41e.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-d0643375.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-37c1062c.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Programmer&#x27;s Handbook</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="advent-of-code-example"><a class="header" href="#advent-of-code-example">Advent of Code Example</a></h1>
+<pre><code class="language-nat"># link to the task: https://adventofcode.com/2015/day/2
+fun dbg(x) printq(x, %q(\n)); return x; nuf;
+
+# sums up the elements of the list
+fun sum(list)
+  if list:get_len() == 0 then
+     return 0;
+  fi
+
+  result = list[0];
+  for i = 1, list:get_len() - 1
+    do result = result + list[i];
+  rof
+
+  return result;
+nuf
+
+# maps the list
+fun map(list, f)
+  new = [];
+  for i = 0, list:get_len() - 1
+    do new[i] = list[i]:f();
+  rof
+
+  return new;
+nuf
+
+# splits %q(3x11x24) on x and returns [%q(3), %q(11), %q(24)]
+fun split_on(str, split_char)
+  splits = [];
+  splits_len = 0;
+
+  first = 0;
+  for i = 0, str:get_len()-1 do
+    if str[i] == split_char then
+      splits[splits_len] = str:slice(first, i);
+      splits_len++;
+      first = i + 1;
+    fi
+  rof
+
+  splits[splits_len] = str:slice(first, str:get_len());
+  return splits;
+nuf
+
+# takes a list of integers and returns the calculated value of the wrapping paper
+fun part_one(list)
+  l = list[0];
+  w = list[1];
+  h = list[2];
+  base = 2 * l * w + 2 * w * h + 2 * h * l;
+
+  if l &gt;= w and l &gt;= h then
+    return base + w * h;
+  elif h &gt;= w and h &gt;= l then
+    return base + w * l;
+  else
+    return base + l * h;
+  fi
+nuf
+
+# takes a list of integers and returns the calculated value of the wrapping paper (using a different formula) 
+fun part_two(list)
+  l = list[0];
+  w = list[1];
+  h = list[2];
+
+  if l &gt;= w and l &gt;= h then
+    return (w + h) * 2 + l * w * h;
+  elif h &gt;= w and h &gt;= l then
+    return (w + l) * 2 + l * w * h;
+  else
+    return (l + h) * 2 + l * w * h;
+  fi
+nuf
+
+input = [%q(3x11x24), %q(13x5x19), %q(1x9x27), %q(24x8x21), %q(6x8x17), %q(19x18x22), %q(10x9x12), %q(12x2x5), %q(26x6x11), %q(9x23x15), %q(12x8x17), %q(13x29x10), %q(28x18x6), %q(22x28x26), %q(1x5x11), %q(29x26x12), %q(8x28x29), %q(27x4x21), %q(12x7x16), %q(7x4x23), %q(15x24x8), %q(15x14x2), %q(11x6x29), %q(28x19x9), %q(10x3x1), %q(5x20x13), %q(10x25x1), %q(22x17x7), %q(16x29x3), %q(18x22x8), %q(18x11x19), %q(21x24x20), %q(4x7x17), %q(22x27x12), %q(1x26x6), %q(5x27x24), %q(29x21x3), %q(25x30x2), %q(21x26x2), %q(10x24x27), %q(10x16x28), %q(18x16x23), %q(6x5x26), %q(19x12x20), %q(6x24x25), %q(11x20x7), %q(4x8x5), %q(2x13x11), %q(11x17x1), %q(13x24x6), %q(22x29x16), %q(4x24x20), %q(10x25x10), %q(12x29x23), %q(23x27x12), %q(11x21x9), %q(13x2x6), %q(15x30x2), %q(8x26x24), %q(24x7x30), %q(22x22x8), %q(29x27x8), %q(28x23x27), %q(13x16x14), %q(9x28x20), %q(21x4x30), %q(21x20x20), %q(11x17x30), %q(9x14x22), %q(20x2x6), %q(10x11x14), %q(1x8x23), %q(23x19x19), %q(26x10x13), %q(21x12x12), %q(25x7x24), %q(1x28x17), %q(20x23x9), %q(2x24x27), %q(20x24x29), %q(1x3x10), %q(5x20x14), %q(25x21x3), %q(15x5x22), %q(14x17x19), %q(27x3x18), %q(29x23x19), %q(14x21x19), %q(20x8x3), %q(22x27x12), %q(24x15x18), %q(9x10x19), %q(29x25x28), %q(14x22x6), %q(4x19x28), %q(4x24x14), %q(17x19x17), %q(7x19x29), %q(28x8x26), %q(7x20x16), %q(11x26x29), %q(2x18x3), %q(12x7x18), %q(11x15x21), %q(24x7x26), %q(2x22x23), %q(2x30x5), %q(1x19x8), %q(15x29x10), %q(15x26x22), %q(20x16x14), %q(25x29x22), %q(3x13x19), %q(1x12x30), %q(3x15x27), %q(19x9x11), %q(30x8x21), %q(26x12x20), %q(11x17x19), %q(17x25x1), %q(19x24x12), %q(30x6x20), %q(11x19x18), %q(18x15x29), %q(18x8x9), %q(25x15x5), %q(15x6x26), %q(13x27x19), %q(23x24x12), %q(3x15x28), %q(17x10x10), %q(15x4x7), %q(15x27x7), %q(21x8x11), %q(9x18x2), %q(7x20x20), %q(17x23x12), %q(2x19x1), %q(7x26x26), %q(13x23x8), %q(10x3x12), %q(11x1x9), %q(1x11x19), %q(25x14x26), %q(16x10x15), %q(7x6x11), %q(8x1x27), %q(20x28x17), %q(3x25x9), %q(30x7x5), %q(17x17x4), %q(23x25x27), %q(23x8x5), %q(13x11x1), %q(15x10x21), %q(22x16x1), %q(12x15x28), %q(27x18x26), %q(25x18x5), %q(21x3x27), %q(15x25x5), %q(29x27x19), %q(11x10x12), %q(22x16x21), %q(11x8x18), %q(6x10x23), %q(21x21x2), %q(13x27x28), %q(2x5x20), %q(23x16x20), %q(1x21x7), %q(22x2x13), %q(11x10x4), %q(7x3x4), %q(19x2x5), %q(21x11x1), %q(7x27x26), %q(12x4x23), %q(12x3x15), %q(25x7x4), %q(20x7x15), %q(16x5x11), %q(1x18x26), %q(11x27x10), %q(17x6x24), %q(19x13x16), %q(6x3x11), %q(4x19x18), %q(16x15x15), %q(1x11x17), %q(19x11x29), %q(18x19x1), %q(1x25x7), %q(8x22x14), %q(15x6x19), %q(5x30x18), %q(30x24x22), %q(11x16x2), %q(21x29x19), %q(20x29x11), %q(27x1x18), %q(20x5x30), %q(12x4x28), %q(3x9x30), %q(26x20x15), %q(18x25x18), %q(20x28x28), %q(21x5x3), %q(20x21x25), %q(19x27x22), %q(8x27x9), %q(1x5x15), %q(30x6x19), %q(16x5x15), %q(18x30x21), %q(4x15x8), %q(9x3x28), %q(18x15x27), %q(25x11x6), %q(17x22x15), %q(18x12x18), %q(14x30x30), %q(1x7x23), %q(27x21x12), %q(15x7x18), %q(16x17x24), %q(11x12x19), %q(18x15x21), %q(6x18x15), %q(2x21x4), %q(12x9x14), %q(19x7x25), %q(22x3x1), %q(29x19x7), %q(30x25x7), %q(6x27x27), %q(5x13x9), %q(21x4x18), %q(13x1x16), %q(11x21x25), %q(27x20x27), %q(14x25x9), %q(23x11x15), %q(22x10x26), %q(15x16x4), %q(14x16x21), %q(1x1x24), %q(17x27x3), %q(25x28x16), %q(12x2x29), %q(9x19x28), %q(12x7x17), %q(6x9x19), %q(15x14x24), %q(25x21x23), %q(26x27x25), %q(7x18x13), %q(15x10x6), %q(22x28x2), %q(15x2x14), %q(3x24x18), %q(30x22x7), %q(18x27x17), %q(29x18x7), %q(20x2x4), %q(4x20x26), %q(23x30x15), %q(5x7x3), %q(4x24x12), %q(24x30x20), %q(26x18x17), %q(6x28x3), %q(29x19x29), %q(14x10x4), %q(15x5x23), %q(12x25x4), %q(7x15x19), %q(26x21x19), %q(18x2x23), %q(19x20x3), %q(3x13x9), %q(29x21x24), %q(26x13x29), %q(30x27x4), %q(20x10x29), %q(21x18x8), %q(7x26x10), %q(29x16x21), %q(22x5x11), %q(17x15x2), %q(7x29x5), %q(6x18x15), %q(23x6x14), %q(10x30x14), %q(26x6x16), %q(24x13x25), %q(17x29x20), %q(4x27x19), %q(28x12x11), %q(23x20x3), %q(22x6x20), %q(29x9x19), %q(10x16x22), %q(30x26x4), %q(29x26x11), %q(2x11x15), %q(1x3x30), %q(30x30x29), %q(9x1x3), %q(30x13x16), %q(20x4x5), %q(23x28x11), %q(24x27x1), %q(4x25x10), %q(9x3x6), %q(14x4x15), %q(4x5x25), %q(27x14x13), %q(20x30x3), %q(28x15x25), %q(5x19x2), %q(10x24x29), %q(29x30x18), %q(30x1x25), %q(7x7x15), %q(1x13x16), %q(23x18x4), %q(1x28x8), %q(24x11x8), %q(22x26x19), %q(30x30x14), %q(2x4x13), %q(27x20x26), %q(16x20x17), %q(11x12x13), %q(28x2x17), %q(15x26x13), %q(29x15x25), %q(30x27x9), %q(2x6x25), %q(10x26x19), %q(16x8x23), %q(12x17x18), %q(26x14x22), %q(13x17x4), %q(27x27x29), %q(17x13x22), %q(9x8x3), %q(25x15x20), %q(14x13x16), %q(8x7x13), %q(12x4x21), %q(27x16x15), %q(6x14x5), %q(28x29x17), %q(23x17x25), %q(10x27x28), %q(1x28x21), %q(18x2x30), %q(25x30x16), %q(25x21x7), %q(2x3x4), %q(9x6x13), %q(19x6x10), %q(28x17x8), %q(13x24x28), %q(24x12x7), %q(5x19x5), %q(18x10x27), %q(16x1x6), %q(12x14x30), %q(1x2x28), %q(23x21x2), %q(13x3x23), %q(9x22x10), %q(10x17x2), %q(24x20x11), %q(30x6x14), %q(28x1x16), %q(24x20x1), %q(28x7x7), %q(1x24x21), %q(14x9x7), %q(22x8x15), %q(20x1x21), %q(6x3x7), %q(7x26x14), %q(5x7x28), %q(5x4x4), %q(15x7x28), %q(30x16x23), %q(7x26x2), %q(1x2x30), %q(24x28x20), %q(5x17x28), %q(4x15x20), %q(15x26x2), %q(1x3x23), %q(22x30x24), %q(9x20x16), %q(7x15x2), %q(6x21x18), %q(21x21x29), %q(29x10x10), %q(4x3x23), %q(23x2x18), %q(29x24x14), %q(29x29x16), %q(22x28x24), %q(21x18x24), %q(16x21x6), %q(3x9x22), %q(9x18x4), %q(22x9x9), %q(12x9x13), %q(18x21x14), %q(7x8x29), %q(28x28x14), %q(1x6x24), %q(11x11x3), %q(8x28x6), %q(11x16x10), %q(9x16x16), %q(6x6x19), %q(21x5x12), %q(15x17x12), %q(3x6x29), %q(19x1x26), %q(10x30x25), %q(24x26x21), %q(1x10x18), %q(6x1x16), %q(4x17x27), %q(17x11x27), %q(15x15x21), %q(14x23x1), %q(8x9x30), %q(22x22x25), %q(20x27x22), %q(12x7x9), %q(9x26x19), %q(26x25x12), %q(8x8x16), %q(28x15x10), %q(29x18x2), %q(25x22x6), %q(4x6x15), %q(12x18x4), %q(10x3x20), %q(17x28x17), %q(14x25x13), %q(14x10x3), %q(14x5x10), %q(7x7x22), %q(21x2x14), %q(1x21x5), %q(27x29x1), %q(6x20x4), %q(7x19x23), %q(28x19x27), %q(3x9x18), %q(13x17x17), %q(18x8x15), %q(26x23x17), %q(10x10x13), %q(11x5x21), %q(25x15x29), %q(6x23x24), %q(10x7x2), %q(19x10x30), %q(4x3x23), %q(22x12x6), %q(11x17x16), %q(6x8x12), %q(18x20x11), %q(6x2x2), %q(17x4x11), %q(20x23x22), %q(29x23x24), %q(25x11x21), %q(22x11x15), %q(29x3x9), %q(13x30x5), %q(17x10x12), %q(10x30x8), %q(21x16x17), %q(1x5x26), %q(22x15x16), %q(27x7x11), %q(16x8x18), %q(29x9x7), %q(25x4x17), %q(10x21x25), %q(2x19x21), %q(29x11x16), %q(18x26x21), %q(2x8x20), %q(17x29x27), %q(25x27x4), %q(14x3x14), %q(25x29x29), %q(26x18x11), %q(8x24x28), %q(7x30x24), %q(12x30x22), %q(29x20x6), %q(3x17x1), %q(6x15x14), %q(6x22x20), %q(13x26x26), %q(12x2x1), %q(7x14x12), %q(15x16x11), %q(3x21x4), %q(30x17x29), %q(9x18x27), %q(11x28x16), %q(22x3x25), %q(18x15x15), %q(2x30x12), %q(3x27x22), %q(10x8x8), %q(26x16x14), %q(15x2x29), %q(12x10x7), %q(21x20x15), %q(2x15x25), %q(4x14x13), %q(3x15x13), %q(29x8x3), %q(7x7x28), %q(15x10x24), %q(23x15x5), %q(5x7x14), %q(24x1x22), %q(1x11x13), %q(26x4x19), %q(19x16x26), %q(5x25x5), %q(17x25x14), %q(23x7x14), %q(24x6x17), %q(5x13x12), %q(20x20x5), %q(22x29x17), %q(11x17x29), %q(25x6x4), %q(29x8x16), %q(28x22x24), %q(24x23x17), %q(16x17x4), %q(17x8x25), %q(22x9x13), %q(24x4x8), %q(18x10x20), %q(21x23x21), %q(13x14x12), %q(23x26x4), %q(4x10x29), %q(2x18x18), %q(19x5x21), %q(2x27x23), %q(6x29x30), %q(21x9x20), %q(6x5x16), %q(25x10x27), %q(5x29x21), %q(24x14x19), %q(19x11x8), %q(2x28x6), %q(19x25x6), %q(27x1x11), %q(6x8x29), %q(18x25x30), %q(4x27x26), %q(8x12x1), %q(7x17x25), %q(7x14x27), %q(12x9x5), %q(14x29x13), %q(18x17x5), %q(23x1x3), %q(28x5x13), %q(3x2x26), %q(3x7x11), %q(1x8x7), %q(12x5x4), %q(2x30x21), %q(16x30x11), %q(3x26x4), %q(16x9x4), %q(11x9x22), %q(23x5x6), %q(13x20x3), %q(4x3x2), %q(14x10x29), %q(11x8x12), %q(26x15x16), %q(7x17x29), %q(18x19x18), %q(8x28x4), %q(22x6x13), %q(9x23x7), %q(11x23x20), %q(13x11x26), %q(15x30x13), %q(1x5x8), %q(5x10x24), %q(22x25x17), %q(27x20x25), %q(30x10x21), %q(16x28x24), %q(20x12x8), %q(17x25x1), %q(30x14x9), %q(14x18x6), %q(8x28x29), %q(12x18x29), %q(9x7x18), %q(6x12x25), %q(20x13x24), %q(22x3x12), %q(5x23x22), %q(8x10x17), %q(7x23x5), %q(10x26x27), %q(14x26x19), %q(10x18x24), %q(8x4x4), %q(16x15x11), %q(3x14x9), %q(18x5x30), %q(29x12x26), %q(16x13x12), %q(15x10x7), %q(18x5x26), %q(14x1x6), %q(10x8x29), %q(3x4x9), %q(19x4x23), %q(28x17x23), %q(30x7x17), %q(19x5x9), %q(26x29x28), %q(22x13x17), %q(28x2x1), %q(20x30x8), %q(15x13x21), %q(25x23x19), %q(27x23x1), %q(4x6x23), %q(29x29x24), %q(5x18x7), %q(4x6x30), %q(17x15x2), %q(27x4x2), %q(25x24x14), %q(28x8x30), %q(24x29x5), %q(14x30x14), %q(10x18x19), %q(15x26x22), %q(24x19x21), %q(29x23x27), %q(21x10x16), %q(7x4x29), %q(14x21x3), %q(21x4x28), %q(17x16x15), %q(24x7x13), %q(21x24x15), %q(25x11x16), %q(10x26x13), %q(23x20x14), %q(20x29x27), %q(14x24x14), %q(14x23x12), %q(18x6x5), %q(3x18x9), %q(8x18x19), %q(20x26x15), %q(16x14x13), %q(30x16x3), %q(17x13x4), %q(15x19x30), %q(20x3x8), %q(13x4x5), %q(12x10x15), %q(8x23x26), %q(16x8x15), %q(22x8x11), %q(12x11x18), %q(28x3x30), %q(15x8x4), %q(13x22x13), %q(21x26x21), %q(29x1x15), %q(28x9x5), %q(27x3x26), %q(22x19x30), %q(4x11x22), %q(21x27x20), %q(22x26x7), %q(19x28x20), %q(24x23x16), %q(26x12x9), %q(13x22x9), %q(5x6x23), %q(20x7x2), %q(18x26x30), %q(3x6x28), %q(24x18x13), %q(28x19x16), %q(25x21x25), %q(25x19x23), %q(22x29x10), %q(29x19x30), %q(4x7x27), %q(5x12x28), %q(8x26x6), %q(14x14x25), %q(17x17x2), %q(5x27x11), %q(8x2x2), %q(3x20x24), %q(26x10x9), %q(22x28x27), %q(18x15x20), %q(12x11x1), %q(5x14x30), %q(7x3x16), %q(2x16x16), %q(18x20x15), %q(13x14x29), %q(1x17x12), %q(13x5x23), %q(19x4x10), %q(25x19x11), %q(15x17x14), %q(1x28x27), %q(11x9x28), %q(9x10x18), %q(30x11x22), %q(21x21x20), %q(2x1x5), %q(2x25x1), %q(7x3x4), %q(22x15x29), %q(21x28x15), %q(12x12x4), %q(21x30x6), %q(15x10x7), %q(10x14x6), %q(21x26x18), %q(14x25x6), %q(9x7x11), %q(22x3x1), %q(1x16x27), %q(1x14x23), %q(2x13x8), %q(14x19x11), %q(21x26x1), %q(4x28x13), %q(12x16x20), %q(21x13x9), %q(3x4x13), %q(14x9x8), %q(21x21x12), %q(27x10x17), %q(6x20x6), %q(28x23x23), %q(2x28x12), %q(8x10x10), %q(3x9x2), %q(20x3x29), %q(19x4x16), %q(29x24x9), %q(26x20x8), %q(15x28x26), %q(18x17x10), %q(7x22x10), %q(20x15x9), %q(6x10x8), %q(7x26x21), %q(8x8x16), %q(15x6x29), %q(22x30x11), %q(18x25x8), %q(6x21x20), %q(7x23x25), %q(8x25x26), %q(11x25x27), %q(22x18x23), %q(3x2x14), %q(16x16x1), %q(15x13x11), %q(3x9x25), %q(29x25x24), %q(9x15x1), %q(12x4x1), %q(23x30x20), %q(3x1x23), %q(6x10x29), %q(28x13x24), %q(4x19x17), %q(6x6x25), %q(27x29x17), %q(12x13x2), %q(10x7x13), %q(14x15x8), %q(22x2x3), %q(27x17x19), %q(23x10x16), %q(5x9x25), %q(9x25x14), %q(11x18x6), %q(18x10x12), %q(9x4x15), %q(7x16x14), %q(17x24x10), %q(11x4x6), %q(12x9x17), %q(22x18x12), %q(6x24x24), %q(6x22x23), %q(5x17x30), %q(6x9x5), %q(17x20x10), %q(6x8x12), %q(14x17x13), %q(29x10x17), %q(22x4x5), %q(10x19x30), %q(22x29x11), %q(10x12x29), %q(21x22x26), %q(16x6x25), %q(1x26x24), %q(30x17x16), %q(27x28x5), %q(30x13x22), %q(7x26x12), %q(11x24x30), %q(1x17x25), %q(22x1x3), %q(29x24x6), %q(4x8x24), %q(13x9x20), %q(8x12x9), %q(21x25x4), %q(23x23x28), %q(5x2x19), %q(29x3x15), %q(22x1x14), %q(3x23x30), %q(8x25x3), %q(15x8x14), %q(30x14x6), %q(23x27x24), %q(19x1x2), %q(10x9x13), %q(13x8x7), %q(8x13x22), %q(5x15x20), %q(17x14x8), %q(5x11x20), %q(5x10x27), %q(24x17x19), %q(21x2x3), %q(15x30x26), %q(21x19x15), %q(2x7x23), %q(13x17x25), %q(30x15x19), %q(26x4x10), %q(2x25x8), %q(9x9x10), %q(2x25x8), %q(19x21x30), %q(17x26x12), %q(7x5x10), %q(2x22x14), %q(10x17x30), %q(1x8x5), %q(23x2x25), %q(22x29x8), %q(13x26x1), %q(26x3x30), %q(25x17x8), %q(25x18x26), %q(26x19x15), %q(8x28x10), %q(12x16x29), %q(30x6x29), %q(28x19x4), %q(27x26x18), %q(15x23x17), %q(5x21x30), %q(8x11x13), %q(2x26x7), %q(19x9x24), %q(3x22x23), %q(6x7x18), %q(4x26x30), %q(13x25x20), %q(17x3x15), %q(8x20x18), %q(23x18x23), %q(28x23x9), %q(16x3x4), %q(1x29x14), %q(20x26x22), %q(3x2x22), %q(23x8x17), %q(19x5x17), %q(21x18x20), %q(17x21x8), %q(30x28x1), %q(29x19x23), %q(12x12x11), %q(24x18x7), %q(21x18x14), %q(14x26x25), %q(9x11x3), %q(10x7x15), %q(27x6x28), %q(14x26x4), %q(28x4x1), %q(22x25x29), %q(6x26x6), %q(1x3x13), %q(26x22x12), %q(6x21x26), %q(23x4x27), %q(26x13x24), %q(5x24x28), %q(22x16x7), %q(3x27x24), %q(19x28x2), %q(11x13x9), %q(29x16x22), %q(30x10x24), %q(14x14x22), %q(22x23x16), %q(14x8x3), %q(20x5x14), %q(28x6x13), %q(3x15x25), %q(4x12x22), %q(15x12x25), %q(10x11x24), %q(7x7x6), %q(8x11x9), %q(21x10x29), %q(23x28x30), %q(8x29x26), %q(16x27x11), %q(1x10x2), %q(24x20x16), %q(7x12x28), %q(28x8x20), %q(14x10x30), %q(1x19x6), %q(4x12x20), %q(18x2x7), %q(24x18x17), %q(16x11x10), %q(1x12x22), %q(30x16x28), %q(18x12x11), %q(28x9x8), %q(23x6x17), %q(10x3x11), %q(5x12x8), %q(22x2x23), %q(9x19x14), %q(15x28x13), %q(27x20x23), %q(19x16x12), %q(19x30x15), %q(8x17x4), %q(10x22x18), %q(13x22x4), %q(3x12x19), %q(22x16x23), %q(11x8x19), %q(8x11x6), %q(7x14x7), %q(29x17x29), %q(21x8x12), %q(21x9x11), %q(20x1x27), %q(1x22x11), %q(5x28x4), %q(26x7x26), %q(30x12x18), %q(29x11x20), %q(3x12x15), %q(24x25x17), %q(14x6x11)];
+
+parse = fun(elem) return elem:split_on(%q(x)):map(cast_int); nuf;
+
+parsed = input:map(parse);
+
+parsed:map(part_one):sum():printq(%q(\n));
+
+parsed:map(part_two):sum():printq(%q(\n));
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="blackjack.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="blackjack.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-bd8f22ea.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
