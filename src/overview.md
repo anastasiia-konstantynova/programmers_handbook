@@ -11,3 +11,10 @@ short_rest();
 printq(%q(Roll initiative....\n));
 1d6:printq();
 ```
+In order to run a `nat20` program download the source from GitLab.
+Type in the following cammends:
+```
+make -B
+
+./nat20 file_name.nat 
+``` 

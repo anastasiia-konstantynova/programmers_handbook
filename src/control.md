@@ -72,3 +72,52 @@ loop
   fi
 pool    
 ```
+
+#### Challenges
+The biggest challenge overall is sitting in this section. I present to you - THE FOR-LOOPS.
+1. I tried to implement `next` which does the same thing as `continue` in C.
+Because of how `LOOPBEGIN` operates (the first thing that the program would jump to is
+a condition check) it was creating an endless loop.
+```
+BEGIN
+  <COND>
+BODY
+  <STMT>
+  <STEP>
+END    
+```
+I had to change it by implementing `CUSTOMLOOPBEGIN` that takes one argument (it jump over the step).
+This argument indicates a jump and now instead of jumping to a condition at the start of an iteration,
+the program jumps to the step first.
+```
+<arg>
+BEGIN_JMP
+  <STEP>
+  <COND>
+BODY
+  <STMT>
+END    
+```
+2. SEGFAULTS with variables. while implementing for-loops it was discovered that local variables get reallocated when
+another one is added, because the variable numbers are accessible via pointers, I had to save this
+value into a variable to preserve it.
+
+Broken Version
+ ```nat
+struct var *loc_start = var_add_local("loc-start");
+struct var *loc_end = var_add_local("loc-end");
+/* this invalidates loc_start because var_add_local reallocates */
+assert(loc_start != NULL);
+prog_add_num(prog, loc_start->nr);
+prog_add_op(prog, SETVAR);
+```
+
+Fixed Version
+```nat
+struct var *loc_start = var_add_local("loc-start");
+int loop_start_nr = loc_start->nr;
+struct var *loc_end = var_add_local("loc-end");
+assert(loc_start != NULL);
+prog_add_num(prog, loop_start_nr);
+prog_add_op(prog, SETVAR);
+```

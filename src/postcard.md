@@ -1,7 +1,7 @@
 # Syntax on a Postcard
 
 This postcard shows `nat20` in a single glance.
-What fits here is what the language considers essential.
+What you see here is what the language considers essential.
 
 ```nat
 fun greet(name)
