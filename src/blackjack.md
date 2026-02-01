@@ -124,13 +124,14 @@ fun computer_turn(player_total)
 		return 1;
 	else
 		printq(%q(it's a tie));
-		return 0;		 	
+		return -1;		 	
 	fi
 nuf
 
 fun play_blackjack()
 	wins = 0;
 	losses = 0;
+	ties = 0;
 
 	loop
 		printq(%q(\n--- new game ---\n));
@@ -140,13 +141,15 @@ fun play_blackjack()
 			result = player_total:computer_turn();
 			if result == 1 then
 				wins++;
+			elif result == -1 then
+				ties++;	
 			else
 				losses++;	
 			fi
 		else
 			losses++;	
 		fi
-		printq(%q(\nscore - wins: ), wins, %q(, losses: ), losses, %q(\n));
+		printq(%q(\nscore - wins: ), wins, %q(, losses: ), losses, %q(, ties: ), ties, %q(\n));
 		printq(%q(\nplay again? y/n: ));
 		play_again = getstring();
 		if play_again != %q(y) and play_again != %q(Y) then
