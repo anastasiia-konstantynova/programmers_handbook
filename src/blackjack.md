@@ -3,11 +3,11 @@
 ```nat
 #*
 Blackjack Game
-Player reveives 2 random cards and tries to get as close to 21 as possible.
+The player receives 2 random cards and tries to get as close to 21 as possible.
 Face cards (J, Q, K) are worth 10, Aces are worth 11 (or 1 if total > 21).
-Player can "hit" (draw more cards) or "stay" (keep current total).
+The player can "hit" (draw more cards) or "stay" (keep current total).
 If player goes over 21, they bust and lose.
-Computer then plays, drawing cards until reaching 17 or higher.
+The computer then plays, drawing cards until reaching 17 or higher.
 Whoever has the higher total without busting wins
 Game tracks wins and losses across multiple rounds
 *#
